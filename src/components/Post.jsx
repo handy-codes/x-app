@@ -1,6 +1,19 @@
+"use client"
+
 import Link from 'next/link';
 import { HiDotsHorizontal } from 'react-icons/hi';
 import Icons from './Icons';
+import ReactTimeAgo from 'react-time-ago';
+import TimeAgo from 'javascript-time-ago'
+import en from 'javascript-time-ago/locale/en'
+import ru from 'javascript-time-ago/locale/ru'
+
+TimeAgo.addDefaultLocale(en)
+TimeAgo.addLocale(ru)
+
+// const time = Date.now()
+const time = new Date().getTime()
+
 
 export default function Post({ post, id }) {
   return (
@@ -15,6 +28,7 @@ export default function Post({ post, id }) {
           <div className='flex items-center space-x-1 whitespace-nowrap'>
             <h4 className='font-bold text-sm truncate'>{post?.name}</h4>
             <span className='text-xs truncate'>@{post?.username}</span>
+            <span><ReactTimeAgo date={time} locale='en-US'/></span>
           </div>
           <HiDotsHorizontal className='text-sm' />
         </div>
