@@ -1,7 +1,7 @@
 const HomePage = () => {
     return ( 
     <div className="">
-        Is this not cool?
+        Is this not cool?gggg
     </div> 
 );
 }
